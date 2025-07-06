@@ -1,0 +1,30 @@
+#nums = [3,1, 8, 2, 4, 2, 1]
+
+#print(sorted(nums)) # Print sorted nums
+
+#print(set(nums)) # Set of nums without ducplicates
+
+def belt_count(dictionary):
+    belts = list(dictionary.values())
+    count = len(set(belts))
+    return count
+
+def ninja_intro(dictionary):
+    for key, val in dictionary.items():
+        print(f'I am {key} and i am a {val} belt')
+
+ninja_belts = {}
+
+while True:
+    ninja_name = input('Enter name: ')
+    ninja_belt = input('Enter belt color: ')
+    ninja_belts[ninja_name] = ninja_belt
+
+    another = input('Add another? (y/n)')
+    if another == 'y':
+        continue
+    else:
+        break
+
+ninja_intro(ninja_belts)
+print(belt_count(ninja_belts))
